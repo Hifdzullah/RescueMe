@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width= device-width, initial-scale=1.0">
+  <title>Register Page - RescueMe</title>
+
+  <!-- Vendor CSS Files -->
+  <!-- <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+  <div class="container-fluid mt-0"></div>
+  <div class="wrapper">
+    <nav>
+
+    </nav>
+    <main>
+      <div>
+        <h1>Registration Form</h1>
+      </div>
+      <hr>
+      <br>
+      <!-- <form name="registerForm" onsubmit="onSUbmitHandler(event)"> -->
+        <form action="/dashboard" method="POST">
+        <fieldset>
+          <legend>Enter your username and password</legend>
+          <div>
+            <label for="username">Username:<br />
+              <input type="text" name="userName" /></label>
+          </div>
+          <div>
+            <label for="Password">Password</label><br />
+            <input type="password" name="password" />
+          </div>
+        </fieldset>
+
+        <br>
+        <div class="div_input_submit">
+          <input type="submit" value="Register">
+        </div>
+
+        <!--Result value-->
+        <div>
+          <h2 id="result1"></h2>
+          <h2 id="result2"></h2>
+          <h2 id="result3"></h2>
+          <h2 id="result4"></h2>
+          <h2 id="result5"></h2>
+          <h2 id="subscribe1"></h2>
+          <h2 id="error"></h2>
+        </div>
+      </form>
+
+
+    </main>
+    <footer>
+      <div>
+        <p>RescueMe @2023</p>
+      </div>
+    </footer>
+  </div>
+
+
+  <!--script for form validations-->
+  <script>
+    "use strict"
+    function onSUbmitHandler(event) {
+      event.preventDefault()
+      let firstname = document.forms['registerForm']['firstname'].value;
+      let email = document.forms['registerForm']['email'].value;
+      let country = document.forms['registerForm']['country'].value;
+      let gender = document.forms['registerForm']['gender'].value;
+      let subscribe = document.forms['registerForm']['subscribe'].value;
+      // console.log(firstname, email, country, gender, subscribe);
+
+      // Validation  to validate if user enter and select the required form
+      if (firstname === "") {
+        document.getElementById('result1').innerHTML = " * Username field is requried";
+        return false;
+        // Regrex validation
+      } else if (email === "") {
+        document.getElementById('result1').innerHTML = " * Email field name is requried";
+        return false;
+      } else {
+        document.getElementById('result1').innerHTML = firstname;
+        document.getElementById('result2').innerHTML = email;
+        document.getElementById('result3').innerHTML = country;
+        document.getElementById('result4').innerHTML = gender;
+        // document.getElementById('result5').innerHTML = subscribe;
+
+        let checkbox = document.getElementById("subscribe");
+        if (checkbox.checked) {
+          document.getElementById('result5').innerHTML = "check";
+
+        } else {
+          document.getElementById('result5').innerHTML = "uncheck";
+        }
+
+      }
+    }
+
+    //Here if you are using onchange="function()" within the <input type="checkbox"
+    function onChangeHandler() {
+      let checkbox = document.getElementById("subscribe");
+      if (checkbox.checked) {
+        document.getElementById('subscribe1').innerHTML = "check";
+
+      } else {
+        document.getElementById('subscribe1').innerHTML = "uncheck";
+      }
+
+    }
+        //nodejs mysql server
+        //TODO: Store username, email, and password
+
+
+  </script>
+
+
+
+</body>
+
+</html>
