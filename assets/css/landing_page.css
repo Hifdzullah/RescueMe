@@ -57,11 +57,17 @@ p,
   height: 50px;
   padding: 5px;
   margin: 8px 0px;
-  background-color: lightblue;
+  background-color:#33bb33;
   font-family: sans-serif;
   font-size: 20px;
   cursor: pointer;
+  color: #fff;
+  border: none;
 
+}
+
+.btn_login:hover,.btn_signup:hover{
+  background-color:#33b133;
 }
 
 
@@ -173,13 +179,12 @@ input{
 
 #header.header-scrolled,
 #header.header-inner-pages {
-  background: #848485;
+  background: #000;
 }
 
 /*--------------------------------------------------------------
 # Navigation Menu (Desktop navigation)
 --------------------------------------------------------------*/
-
 
 .navbar ul {
   margin: 0;
@@ -203,7 +208,8 @@ input{
 .navbar a:focus {
   display: flex;
   align-items: center;
-  padding: 10px 10px 10px 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 17px;
   font-weight: 500;
   color: #ffff;
@@ -225,7 +231,7 @@ input{
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  background-color: #47b2e4;
+  background-color: #33bb33;
   color: white
 }
 
@@ -242,7 +248,7 @@ input{
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #31a9e1;
+  background: #33bb33;
 }
 
 .navbar .dropdown ul {
@@ -280,7 +286,7 @@ input{
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #47b2e4;
+  color: #33bb33;
 }
 
 .navbar .dropdown:hover>ul {
@@ -380,7 +386,7 @@ input{
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #47b2e4;
+  color: #fff;
 }
 
 .navbar-mobile .getstarted,
@@ -423,6 +429,48 @@ input{
   display: block;
 }
 
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs-feed{
+  background: #f3f5fa;
+  height: 5px;
+  font-size: 30px;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs-feed {
+
+  }
+}
+
+.breadcrumbs-feed h2 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  color: #000000;
+  font-family: 'Arial', Helvetica, sans-serif;
+}
+
+.breadcrumbs-feed ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs-feed ol li+li {
+  padding-left: 10px;
+}
+
+.breadcrumbs-feed ol li+li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #000000;
+  content: ">";
+}
 
 /*--------------------------------------------------------------
 # Banner
@@ -1072,18 +1120,6 @@ section {
   padding: 10px 12px;
 }
 
-.contact .php-email-form button[type=submit] {
-  background: #47b2e4;
-  border: 0;
-  padding: 12px 34px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: #209dd8;
-}
 
 @-webkit-keyframes animate-loading {
   0% {
@@ -1154,7 +1190,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   font-size: 14px;
-  background: #37517e;
+  background: #000;
 }
 
 #footer .footer-newsletter {
@@ -1174,26 +1210,6 @@ section {
   color: #37517e;
 }
 
-
-#footer .footer-newsletter form input[type=submit] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border: 0;
-  background: none;
-  font-size: 16px;
-  padding: 0 20px;
-  background: #47b2e4;
-  color: #fff;
-  transition: 0.3s;
-  border-radius: 50px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-}
-
-#footer .footer-newsletter form input[type=submit]:hover {
-  background: #209dd8;
-}
 
 #footer .footer-top {
   padding: 60px 0 30px 0;

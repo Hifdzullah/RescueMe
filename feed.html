@@ -19,13 +19,12 @@
   <!-- Main CSS File -->
   <link href="assets/css/landing_page.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/login.css" rel="stylesheet">
   <link href="assets/css/feed.css" rel="stylesheet">
 
   <!--TODO: Search bar, search filter, navigation, feed container, breadcrumbs-->
-  <main id="main-feed">
+  <main>
      <!-- ======= START: Breadcrumbs ======= -->
-     <section id="breadcrumbs" class="breadcrumbs-feed" style="margin-top: -0px;">
+     <section id="breadcrumbs" class="breadcrumbs-feed">
       <div class="container">
         <ol>
           <li><a href="index.html" style="color:#000">Home</a></li>
@@ -33,24 +32,34 @@
         </ol>
       </div>
     </section>
-    <!-- End Breadcrumbs -->
+    <!-- =====End Breadcrumbs==== -->
+
+    <!--====TODO: Search bar (Search all elements that are identical), search filter(By Location,By), search button(All, Cats, Dogs,)====-->
+    <!--====Display all data and post based on the search query====-->
+      
+
+    <!--===START: Header===-->
     <header id="header" class="sticky-top" style="background-color: #000;">
       <div class="container d-flex align-items-center">
         <p class="logo me-auto"></p>
+         <!-- START: navbar -->
         <nav id="navbar" class="navbar">
           <ul>
-            <!-- <li><a class="nav-link scrollto" href="#about-us">About Us</a></li>
+            <li><a class="nav-link scrollto" href="#about-us">About Us</a></li>
             <li><a class="nav-link scrollto" href="feed.html">Feed</a></li>
             <li><a class="nav-link scrollto" href="adoption.html">Adoption</a></li>
             <li><a class="nav-link scrollto" href="vet.html">Vetenarian</a></li>
             <li><a class="nav-link scrollto" href="suggestion.html">Suggestion</a></li>
-            <li><a class="nav-link scrollto" href="#login-signup-form">Login/Register</a></li> -->
+            <li><a class="nav-link scrollto" href="#login-signup-form">Login/Register</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
         <!-- End: navbar -->
       </div>
     </header>
+    <!-- ===END: Header=== -->
+
+    <!-- ===START: Section Feed=== -->
     <section id="about-us" class="about section-bg" >
       <div class="section-title">
         <!--h3 heading will dynamically changes when search filter is choose-->
@@ -59,9 +68,10 @@
       <div class="container" data-aos="fade-up">
         <div class=" row content">
           <div class="mx-md-auto">
-
             <p class="p-about-us">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad nulla aspernatur molestias odit dolorum neque, officiis repellat quia aliquid, provident ullam. Exercitationem at voluptatibus adipisci quaerat? Nam molestiae minima velit?
+            
+            
             </p>
           </div>
         </div>
@@ -111,21 +121,29 @@
                 </ul>
             </section>
         </div>
-         <!--ALL Feed-->
-
-
-      <!--By Location-->
-
-
-      <!--By Breed-->
+      </div>
+       
     </section>
-     
-     
-   
-    
+     <!-- ===END: Section Feed=== -->
   </main>
 
+  <!-- ===START: Preloader=== -->
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  <!--===END: Preloader=== -->
 
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
 
 </body>
