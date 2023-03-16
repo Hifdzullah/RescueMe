@@ -47,8 +47,7 @@ app.use('*/scss', express.static(path.join(__dirname, 'assets/scss')))
 app.use('*/vendor', express.static(path.join(__dirname, 'assets/vendor')))
 
 
-//GET
-//Main endpoint
+//Render page
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html')
 })
@@ -73,7 +72,6 @@ app.get('/vet.html', (req, res) => {
 app.get('/index.html', (req, res) => {
   res.sendFile(__dirname + '/index.html')
 })
-
 
 
 //---========== START: POST LOGIN DATA ---===============
