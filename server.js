@@ -32,19 +32,19 @@ app.use(
 app.use(cookieParser())
 
 var con = mysql.createConnection({
-  host: 'localhost',
-  user: 'root', // my username
-  password: 'root000', // my password
-  database: 'db_auth'
+  host: 'us-cdbr-east-06.cleardb.net',
+  user: 'b840d27893baf0', // my username
+  password: '56eebefc', // my password
+  database: 'heroku_a97edbc2b0fde45'
 })
 
 //Get static file
 app.use(express.static('assets'))
 //Reference from https://stackoverflow.com/questions/5924072/express-js-cant-get-my-static-files-why
 app.use('*/css', express.static(path.join(__dirname, 'assets/css')))
-app.use('*/js', express.static(path.join(__dirname, 'assets/js')))
-app.use('*/scss', express.static(path.join(__dirname, 'assets/scss')))
-app.use('*/vendor', express.static(path.join(__dirname, 'assets/vendor')))
+// app.use('*/js', express.static(path.join(__dirname, 'assets/js')))
+// app.use('*/scss', express.static(path.join(__dirname, 'assets/scss')))
+app.use('*/vendor', express.static(path.join(__dirname, 'assets/externalfile')))
 
 
 //Render page
@@ -107,14 +107,14 @@ app.post('/login', encodeUrl, (req, res) => {
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>RescueMe</title>
+
                 <!-- Bootsrap and Other External CSS Files -->
-                <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-                <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-                <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-                <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-                <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-                <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-                <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+                <link href="assets/externalfile/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+                <link href="assets/externalfile/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+              
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+              
+              
 
                 <!-- Main CSS File -->
                 <link href="assets/css/landing_page.css" rel="stylesheet">
@@ -130,7 +130,7 @@ app.post('/login', encodeUrl, (req, res) => {
                 <section id="banner" class="d-flex align-items-center" style="background-image:url(./img/banner.jpg);  background-size: 1400px 526px ; background-repeat: no-repeat;">
                   <div class="container">
                     <div class="row">
-                      <h1 style="text-align:center">RescueMe</h1>
+                      <h1 style="text-align:center; margin:auto">RescueMe</h1>
                       <h2 style="text-align:center; color: #fff;">RescueMe,  real-time web application for everyone and animal lovers community. We aim to give the animal to have a better life
                       </h2>
                     </div>
@@ -143,10 +143,10 @@ app.post('/login', encodeUrl, (req, res) => {
 
                   <!-- ======= START: Border ======= -->
                   <!-- <div class="border horizontal-border-bg"> -->
-                  <header id="header" class="sticky-top">
+                  <header id="header" class="sticky-top" style="background-color:#000">
                     <div class="container d-flex align-items-center">
                       <!--login username after login is successful-->
-                      <p class="logo me-auto" style="color: white;"> ${req.session.user.username}</p>
+                      <p class="logo me-auto" style="color: white;">Welcome, ${req.session.user.username}</p>
                       <nav id="navbar" class="navbar">
                         <ul>
                           <li><a class="nav-link scrollto" href="#about-us">About Us</a></li>
@@ -166,7 +166,7 @@ app.post('/login', encodeUrl, (req, res) => {
 
                   <!-- ======= START: About Us ======= -->
                   <section id="about-us" class="about">
-                    <div class="container" data-aos="fade-up">
+                    <div class="container">
                       <div class="section-title">
                         <h2>About</h2>
                       </div>
@@ -184,9 +184,9 @@ app.post('/login', encodeUrl, (req, res) => {
 
                   <!-- ======= START: Login/Registration Form Section ======= -->
                   <section id="login-signup-form" class="skills section-bg">
-                    <div class="container" data-aos="fade-up" style="margin: auto; display: inline-flexbox;">
+                    <div class="container" style="margin: auto; display: inline-flexbox;">
                       <div class="row">
-                        <div class="col-lg-6 pt-4 pt-lg-15" data-aos="fade-right" data-aos-delay="100">
+                        <div class="col-lg-6 pt-4 pt-lg-15">
                           <div class="section-title">
                             <h2>Login</h2>
                           </div>
@@ -225,7 +225,7 @@ app.post('/login', encodeUrl, (req, res) => {
                         </div>
                         <!--========END: Login Form=========-->
 
-                        <div class="col-lg-6 pt-4 pt-lg-15 " data-aos="fade-left" data-aos-delay="100">
+                        <div class="col-lg-6 pt-4 pt-lg-15">
                           <div class="section-title">
                             <h2>Sign Up</h2>
                           </div>
@@ -265,22 +265,11 @@ app.post('/login', encodeUrl, (req, res) => {
 
                   <!-- ======= Top footer ======= -->
                   <section id="contact-me" class="contact ">
-                    <div class="container" data-aos="fade-up">
+                    <div class="container">
                       <div class="section-title">
                         <h2></h2>
                         <div class="row">
-                          <!-- <div class="col-lg-5" style="margin:auto" style="border:1px solid black">
-                            <div class="info">
-                              <div class="phone">
-                                <h4>Contact Number</h4>
-                                <p></p>
-                              </div>
-                              <div class="email">
-                                <h4>Email:</h4>
-                                <p><a href="mailto: mohdhifdzullah.matali@gmail.com">mohdhifdzullah.matali@gmail.com</a></p>
-                              </div>
-                            </div>
-                          </div> -->
+                         
                         </div>
                   </section>
                   <!-- End Contact Section -->
@@ -302,15 +291,8 @@ app.post('/login', encodeUrl, (req, res) => {
                     class="bi bi-arrow-up-short"></i></a>
 
                 <!-- Vendor JS Files -->
-                <script src="assets/vendor/aos/aos.js"></script>
-                <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-                <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-                <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-                <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-                <script src="assets/vendor/php-email-form/validate.js"></script>
-                <!-- Template Main JS File -->
-                <script src="assets/js/main.js"></script>
+                
+                <script src="assets/externalfile/bootstrap/js/bootstrap.bundle.min.js"></script>
               </body>
               </html>
             `)
@@ -345,7 +327,7 @@ app.post('/register', encodeUrl, (req, res) => {
         }
         //Check if 
         if (Object.keys(result).length > 0) {
-          res.statusCode(401).sendFile(__dirname + '/error_log.html')
+          res.sendFile(__dirname + '/error_log.html')
         } else {
           //creating user page in userPage function
           function userPage () {
@@ -367,13 +349,9 @@ app.post('/register', encodeUrl, (req, res) => {
                     <title>RescueMe</title>
 
                     <!-- Bootsrap and Other External CSS Files -->
-                    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-                    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-                    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-                    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-                    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-                    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-                    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+                    <link href="assets/externalfile/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+                    <link href="assets/externalfile/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"
 
                     <!-- Main CSS File -->
                     <link href="assets/css/landing_page.css" rel="stylesheet">
@@ -383,15 +361,11 @@ app.post('/register', encodeUrl, (req, res) => {
 
                   <body>
 
-                    <!--Start: Nav Header -->
-
-                    <!-- End: Nav header -->
-
                     <!-- ====== Start: Section (Banner)====== -->
                     <section id="banner" class="d-flex align-items-center" style="background-image:url(./img/banner.jpg);  background-size: 1400px 526px ; background-repeat: no-repeat;">
                       <div class="container">
                         <div class="row">
-                          <h1 style="text-align:center">RescueMe</h1>
+                          <h1 style="text-align:center; margin: auto">RescueMe</h1>
                           <h2 style="text-align:center; color: #fff;">RescueMe,  real-time web application for everyone and animal lovers community. We aim to give the animal to have a better life
                           </h2>
                         </div>
@@ -404,10 +378,10 @@ app.post('/register', encodeUrl, (req, res) => {
 
                       <!-- ======= START: Border ======= -->
                       <!-- <div class="border horizontal-border-bg"> -->
-                      <header id="header" class="sticky-top">
+                      <header id="header" class="sticky-top" style="background-color: #000000;">
                         <div class="container d-flex align-items-center">
                           <!--login username after login is successful-->
-                          <p class="logo me-auto" style="color:#fff">Welcome, ${req.session.user.username}</p>
+                          <p class="logo me-auto" style="color:#fff"></p>
                           <nav id="navbar" class="navbar">
                             <ul>
                               <li><a class="nav-link scrollto" href="#about-us">About Us</a></li>
@@ -427,7 +401,7 @@ app.post('/register', encodeUrl, (req, res) => {
 
                       <!-- ======= START: About Us ======= -->
                       <section id="about-us" class="about">
-                        <div class="container" data-aos="fade-up">
+                        <div class="container">
                           <div class="section-title">
                             <h2>About</h2>
                           </div>
@@ -445,9 +419,9 @@ app.post('/register', encodeUrl, (req, res) => {
 
                       <!-- ======= START: Login/Registration Form Section ======= -->
                       <section id="login-signup-form" class="skills section-bg">
-                        <div class="container" data-aos="fade-up" style="margin: auto; display: inline-flexbox;">
+                        <div class="container" style="margin: auto; display: inline-flexbox;">
                           <div class="row">
-                            <div class="col-lg-6 pt-4 pt-lg-15" data-aos="fade-right" data-aos-delay="100">
+                            <div class="col-lg-6 pt-4 pt-lg-15">
                               <div class="section-title">
                                 <h2>Login</h2>
                               </div>
@@ -486,7 +460,7 @@ app.post('/register', encodeUrl, (req, res) => {
                             </div>
                             <!--========END: Login Form=========-->
 
-                            <div class="col-lg-6 pt-4 pt-lg-15 " data-aos="fade-left" data-aos-delay="100">
+                            <div class="col-lg-6 pt-4 pt-lg-15 ">
                               <div class="section-title">
                                 <h2>Sign Up</h2>
                               </div>
@@ -526,22 +500,10 @@ app.post('/register', encodeUrl, (req, res) => {
 
                       <!-- ======= Top footer ======= -->
                       <section id="contact-me" class="contact ">
-                        <div class="container" data-aos="fade-up">
+                        <div class="container">
                           <div class="section-title">
                             <h2></h2>
                             <div class="row">
-                              <!-- <div class="col-lg-5" style="margin:auto" style="border:1px solid black">
-                                <div class="info">
-                                  <div class="phone">
-                                    <h4>Contact Number</h4>
-                                    <p>8148496</p>
-                                  </div>
-                                  <div class="email">
-                                    <h4>Email:</h4>
-                                    <p><a href="mailto: mohdhifdzullah.matali@gmail.com">mohdhifdzullah.matali@gmail.com</a></p>
-                                  </div>
-                                </div>
-                              </div> -->
                             </div>
                       </section>
                       <!-- End Contact Section -->
@@ -562,18 +524,9 @@ app.post('/register', encodeUrl, (req, res) => {
                     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
                         class="bi bi-arrow-up-short"></i></a>
 
-                    <!-- Vendor JS Files -->
-                    <script src="assets/vendor/aos/aos.js"></script>
+                    <!-- External JS Files -->
                     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-                    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-                    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-                    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-                    <script src="assets/vendor/php-email-form/validate.js"></script>
-
-                    <!-- Template Main JS File -->
-                    <script src="assets/js/main.js"></script>
-
+              
                   </body>
 
                   </html>          
