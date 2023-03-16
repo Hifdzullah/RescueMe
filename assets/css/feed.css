@@ -1,0 +1,29 @@
+.table-tag-filter{
+  float: left;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+
+}
+
+.btn-tag-filter{
+border: 1pcx solid #000;
+width: 50px;
+border-radius: 12px;
+text-align: center;
+font-family: 'Arial', Helvetica, sans-serif;
+font-size: 15px;
+
+}
+
+.btn-search{
+  background-color:  #33bb33;
+  width: 100px;
+  color: #fff;
+  text-align: center;
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: 15px;
+}
+

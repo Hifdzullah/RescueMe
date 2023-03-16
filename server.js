@@ -5,6 +5,9 @@ const http = require('http')
 var parseUrl = require('body-parser')
 const app = express()
 
+//Validaton middleware
+const validator = require("express-validator");
+
 
 var mysql = require('mysql')
 const { encode } = require('punycode')
@@ -73,7 +76,7 @@ app.get('/index.html', (req, res) => {
 
 
 
-//---========== START: LOGIN ---===============
+//---========== START: POST LOGIN DATA ---===============
 app.post('/login', encodeUrl, (req, res) => {
   var userName = req.body.userName
   var password = req.body.password
@@ -130,9 +133,8 @@ app.post('/login', encodeUrl, (req, res) => {
                   <div class="container">
                     <div class="row">
                       <h1 style="text-align:center">RescueMe</h1>
-                      <h2 style="text-align:center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique molestias
-                        sapiente eligendi cupiditate nam minima corporis maiores laborum et voluptate, mollitia doloribus, quibusdam
-                        quos perferendis, est eos quaerat. Aspernatur, nisi?</h2>
+                      <h2 style="text-align:center; color: #fff;">RescueMe,  real-time web application for everyone and animal lovers community. We aim to give the animal to have a better life
+                      </h2>
                     </div>
                   </div>
                 </section>
@@ -309,14 +311,10 @@ app.post('/login', encodeUrl, (req, res) => {
                 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
                 <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
                 <script src="assets/vendor/php-email-form/validate.js"></script>
-
                 <!-- Template Main JS File -->
                 <script src="assets/js/main.js"></script>
-
               </body>
-
               </html>
-          
             `)
         }
 
@@ -329,7 +327,10 @@ app.post('/login', encodeUrl, (req, res) => {
     )
   })
 })
+// ---========== END: POST LOGIN DATA ---===============
 
+
+//---===========START: POST REGISTER DATA===============
 app.post('/register', encodeUrl, (req, res) => {
   var userName = req.body.userName
   var password = req.body.password
@@ -344,12 +345,13 @@ app.post('/register', encodeUrl, (req, res) => {
         if (err) {
           console.log(err)
         }
+        //Check if 
         if (Object.keys(result).length > 0) {
           res.statusCode(401).sendFile(__dirname + '/error_log.html')
         } else {
           //creating user page in userPage function
           function userPage () {
-            // We create a session for the dashboard (user page) page and save the user data to this session:
+            //Create sesison in (user page) function page and save the user data to this session:
             req.session.user = {
               username: userName,
               password: password
@@ -392,9 +394,8 @@ app.post('/register', encodeUrl, (req, res) => {
                       <div class="container">
                         <div class="row">
                           <h1 style="text-align:center">RescueMe</h1>
-                          <h2 style="text-align:center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique molestias
-                            sapiente eligendi cupiditate nam minima corporis maiores laborum et voluptate, mollitia doloribus, quibusdam
-                            quos perferendis, est eos quaerat. Aspernatur, nisi?</h2>
+                          <h2 style="text-align:center; color: #fff;">RescueMe,  real-time web application for everyone and animal lovers community. We aim to give the animal to have a better life
+                          </h2>
                         </div>
                       </div>
                     </section>
@@ -595,6 +596,9 @@ app.post('/register', encodeUrl, (req, res) => {
     )
   })
 })
+//---===========END: POST REGISTER DATA===============
+
+
 
 // app.delete('/logout', (req, res) => {
 //   if (req.session) {
@@ -609,6 +613,8 @@ app.post('/register', encodeUrl, (req, res) => {
 //     res.end()
 //   }
 // })
+
+
 
 app.listen(4000, () => {
   console.log('Server running on port 4000')
