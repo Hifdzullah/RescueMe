@@ -1,9 +1,12 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
-//const session = require('cookie-session')
 
 const MemoryStore = require('memorystore')(session)
+
+const port = process.env.PORT || 5000
+
+
 
 
 const http = require('http')
@@ -20,6 +23,9 @@ const { encode } = require('punycode')
 const path = require('path')
 
 let encodeUrl = parseUrl.urlencoded({ extended: false })
+
+app.listen(port);
+console.log(`server is listening ${port}`)
 
 app.use('/assets/css', express.static('css'))
 
@@ -42,12 +48,15 @@ app.use(express.json());
 
 app.use(
   session({
-  cookie: { maxAge: 86400000 },
+  cookie: { maxAge: 86400000,
+    sameSite: 'none' 
+   },
   store: new MemoryStore({
     checkPeriod: 86400000 // prune expired entries every 24h
   }),
   resave: false,
-  secret: 'keyboard cat'
+  secret: 'keyboard cat',
+  saveUninitialized: true
 }))
 
 
@@ -602,6 +611,6 @@ app.post('/register', encodeUrl, (req, res) => {
 
 
 
-app.listen(4000, () => {
-  console.log('Server running on port 4000')
-})
+// app.listen(4000, () => {
+//   console.log('Server running on port 4000')
+// })
