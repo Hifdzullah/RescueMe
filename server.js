@@ -381,201 +381,201 @@ app.post('/register', encodeUrl, (req, res) => {
               username: userName,
               password: password
             }
+            res.sendFile(__dirname + '/success_reg.html')
+            // res.send(`<!DOCTYPE html>
+            // <html lang="en">
 
-            res.send(`<!DOCTYPE html>
-            <html lang="en">
+            //   <head>
+            //     <meta charset="UTF-8">
+            //     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            //     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-              <head>
-                <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            //     <title>RescueMe</title>
 
-                <title>RescueMe</title>
+            //     <!-- Bootsrap and Other External CSS Files -->
+            //     <link href="assets/externalfile/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+            //     <link href="assets/externalfile/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+            //     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"
 
-                <!-- Bootsrap and Other External CSS Files -->
-                <link href="assets/externalfile/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-                <link href="assets/externalfile/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"
+            //     <!-- Main CSS File -->
+            //     <link href="assets/css/landing_page.css" rel="stylesheet">
+            //     <link href="assets/css/login.css" rel="stylesheet">
 
-                <!-- Main CSS File -->
-                <link href="assets/css/landing_page.css" rel="stylesheet">
-                <link href="assets/css/login.css" rel="stylesheet">
+            //   </head>
 
-              </head>
+            //   <body>
 
-              <body>
+            //     <!-- ====== Start: Section (Banner)====== -->
+            //     <section id="banner" class="d-flex align-items-center" style="background-image:url(./img/banner.jpg);  background-size: 1400px 526px ; background-repeat: no-repeat;">
+            //       <div class="container">
+            //         <div class="row">
+            //           <h1 style="text-align:center; margin: auto">RescueMe</h1>
+            //           <h2 style="text-align:center; color: #fff;">RescueMe is a real-time web application for everyone and animals lovers community.
+            //            We aim to give the animal to have a better life.
+            //           </h2>
+            //         </div>
+            //       </div>
+            //     </section>
+            //     <!-- End: Section (Banner) -->
 
-                <!-- ====== Start: Section (Banner)====== -->
-                <section id="banner" class="d-flex align-items-center" style="background-image:url(./img/banner.jpg);  background-size: 1400px 526px ; background-repeat: no-repeat;">
-                  <div class="container">
-                    <div class="row">
-                      <h1 style="text-align:center; margin: auto">RescueMe</h1>
-                      <h2 style="text-align:center; color: #fff;">RescueMe is a real-time web application for everyone and animals lovers community.
-                       We aim to give the animal to have a better life.
-                      </h2>
-                    </div>
-                  </div>
-                </section>
-                <!-- End: Section (Banner) -->
+            //     <!-- ======Start: Main =======-->
+            //     <main id="main">
 
-                <!-- ======Start: Main =======-->
-                <main id="main">
+            //       <!-- ======= START: Border ======= -->
+            //       <!-- <div class="border horizontal-border-bg"> -->
+            //       <header id="header" class="sticky-top" style="background-color: #000000;">
+            //         <div class="container d-flex align-items-center">
+            //           <!--login username after login is successful-->
+            //           <p class="logo me-auto" style="color:#fff"></p>
+            //           <nav id="navbar" class="navbar">
+            //             <ul>
+            //               <li><a class="nav-link scrollto" href="#about-us">About Us</a></li>
+            //               <li><a class="nav-link scrollto" href="feed.html">Feed</a></li>
+            //               <li><a class="nav-link scrollto" href="adoption.html">Adoption</a></li>
+            //               <li><a class="nav-link scrollto" href="vet.html">Vetenarian</a></li>
+            //               <li><a class="nav-link scrollto" href="suggestion.html">Suggestion</a></li>
+            //               <li><a class="nav-link scrollto" href="#login-signup-form">Login/Register</a></li>
+            //             </ul>
+            //             <i class="bi bi-list mobile-nav-toggle" style="font-size: 19px; text-align: center; line-height: 15px;">Sorry, this webpage does not support responsive design</i>
+            //           </nav>
+            //           <!-- End: navbar -->
+            //         </div>
+            //       </header>
+            //       <!-- </div> -->
+            //       <!-- END: Border -->
 
-                  <!-- ======= START: Border ======= -->
-                  <!-- <div class="border horizontal-border-bg"> -->
-                  <header id="header" class="sticky-top" style="background-color: #000000;">
-                    <div class="container d-flex align-items-center">
-                      <!--login username after login is successful-->
-                      <p class="logo me-auto" style="color:#fff"></p>
-                      <nav id="navbar" class="navbar">
-                        <ul>
-                          <li><a class="nav-link scrollto" href="#about-us">About Us</a></li>
-                          <li><a class="nav-link scrollto" href="feed.html">Feed</a></li>
-                          <li><a class="nav-link scrollto" href="adoption.html">Adoption</a></li>
-                          <li><a class="nav-link scrollto" href="vet.html">Vetenarian</a></li>
-                          <li><a class="nav-link scrollto" href="suggestion.html">Suggestion</a></li>
-                          <li><a class="nav-link scrollto" href="#login-signup-form">Login/Register</a></li>
-                        </ul>
-                        <i class="bi bi-list mobile-nav-toggle" style="font-size: 19px; text-align: center; line-height: 15px;">Sorry, this webpage does not support responsive design</i>
-                      </nav>
-                      <!-- End: navbar -->
-                    </div>
-                  </header>
-                  <!-- </div> -->
-                  <!-- END: Border -->
-
-                  <!-- ======= START: About Us ======= -->
-                  <section id="about-us" class="about">
-                    <div class="container">
-                      <div class="section-title">
-                        <h2>About</h2>
-                      </div>
-                      <div class=" row content">
-                        <div class="mx-md-auto">
-                        <p class="p-about-us" style="text-align:justify;">
-                        According to BruneianNews (2022) about 50,000 stray cats and dogs were recorded in Brunei Darussalam.
-                         RescueMe a rescue web application provides everyone and animal lovers with easy access, to sharing information about stray and lost cats or dogs in real-time. An animal rescue web application to provide assistance to cats and dogs to have better life and place in a shelter peacefully. The RescueMe application provides everyone with access to 
-                        veterinarians, animal caretakers, and volunteers all in a single platform.
-                       </p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                  <!-- END: About Us Section  -->
+            //       <!-- ======= START: About Us ======= -->
+            //       <section id="about-us" class="about">
+            //         <div class="container">
+            //           <div class="section-title">
+            //             <h2>About</h2>
+            //           </div>
+            //           <div class=" row content">
+            //             <div class="mx-md-auto">
+            //             <p class="p-about-us" style="text-align:justify;">
+            //             According to BruneianNews (2022) about 50,000 stray cats and dogs were recorded in Brunei Darussalam.
+            //              RescueMe a rescue web application provides everyone and animal lovers with easy access, to sharing information about stray and lost cats or dogs in real-time. An animal rescue web application to provide assistance to cats and dogs to have better life and place in a shelter peacefully. The RescueMe application provides everyone with access to 
+            //             veterinarians, animal caretakers, and volunteers all in a single platform.
+            //            </p>
+            //             </div>
+            //           </div>
+            //         </div>
+            //       </section>
+            //       <!-- END: About Us Section  -->
 
 
-                  <!-- ======= START: Login/Registration Form Section ======= -->
-                  <section id="login-signup-form" class="skills section-bg">
-                    <div class="container" style="margin: auto; display: inline-flexbox;">
-                      <div class="row">
-                        <div class="col-lg-6 pt-4 pt-lg-15">
-                          <div class="section-title">
-                            <h2>Login</h2>
-                          </div>
-                          <div class="skills-content">
+            //       <!-- ======= START: Login/Registration Form Section ======= -->
+            //       <section id="login-signup-form" class="skills section-bg">
+            //         <div class="container" style="margin: auto; display: inline-flexbox;">
+            //           <div class="row">
+            //             <div class="col-lg-6 pt-4 pt-lg-15">
+            //               <div class="section-title">
+            //                 <h2>Login</h2>
+            //               </div>
+            //               <div class="skills-content">
 
-                            <!--Form action to server.js using post method-->
-                            <!--========START: Login Form=========-->
-                            <form action="/Login" method="POST">
-                              <div>
-                                <label for="username" style="color:#000000;">Enter Username:<br />
-                                  <input type="text" name="userName" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
-                                  border: 1px solid gray;"/></label>
-                              </div>
-                              <div>
-                                <label for="Password" style="color: #000000;">Enter password:<br />
-                                <input type="password" name="password" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
-                                border: 1px solid gray;"/></label>
-                              </div>
-                              <br>
-                              <div class="div_input_submit">
-                                <button type="submit" class="btn_login">Login</button>
-                              </div>
+            //                 <!--Form action to server.js using post method-->
+            //                 <!--========START: Login Form=========-->
+            //                 <form action="/Login" method="POST">
+            //                   <div>
+            //                     <label for="username" style="color:#000000;">Enter Username:<br />
+            //                       <input type="text" name="userName" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
+            //                       border: 1px solid gray;"/></label>
+            //                   </div>
+            //                   <div>
+            //                     <label for="Password" style="color: #000000;">Enter password:<br />
+            //                     <input type="password" name="password" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
+            //                     border: 1px solid gray;"/></label>
+            //                   </div>
+            //                   <br>
+            //                   <div class="div_input_submit">
+            //                     <button type="submit" class="btn_login">Login</button>
+            //                   </div>
 
-                              <!--Validation error message-->
-                              <div>
-                                <h2 id="result1"></h2>
-                                <h2 id="result2"></h2>
-                                <h2 id="result3"></h2>
-                                <h2 id="result4"></h2>
-                                <h2 id="result5"></h2>
-                                <h2 id="subscribe1"></h2>
-                                <h2 id="error"></h2>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                        <!--========END: Login Form=========-->
-                        <div class="col-lg-6 pt-4 pt-lg-15 ">
-                          <div class="section-title">
-                            <h2>Sign Up</h2>
-                          </div>
-                          <div class="skills-content">
-                            <form action="/Register" method="POST">
-                              <!-- onsubmit="onSUbmitHandler(event)" -->
-                              <div>
-                                <label for="username" style="color:#000000;">Enter Username:<br />
-                                  <input type="text" name="userName" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
-                                  border: 1px solid gray;" required/></label>
-                              </div>
-                              <div>
-                                <label for="Password" style="color: #000000;">Enter Password</label><br />
-                                <input type="password" name="password"style=" width: 400px; height: 40px; padding: 5px;
-                                border: 1px solid gray;" required/></label>
-                              </div>
-                              <br>
-                              <div class="div_input_submit">
-                                <button type="submit" class="btn_signup">Sign Up</button>
-                              </div>
-                              <div>
-                                <h2 id="result1"></h2>
-                                <h2 id="result2"></h2>
-                                <h2 id="result3"></h2>
-                                <h2 id="result4"></h2>
-                                <h2 id="result5"></h2>
-                                <h2 id="subscribe1"></h2>
-                                <h2 id="error"></h2>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                  <!-- ======= END: Login/Registration Form Section ======= -->
+            //                   <!--Validation error message-->
+            //                   <div>
+            //                     <h2 id="result1"></h2>
+            //                     <h2 id="result2"></h2>
+            //                     <h2 id="result3"></h2>
+            //                     <h2 id="result4"></h2>
+            //                     <h2 id="result5"></h2>
+            //                     <h2 id="subscribe1"></h2>
+            //                     <h2 id="error"></h2>
+            //                   </div>
+            //                 </form>
+            //               </div>
+            //             </div>
+            //             <!--========END: Login Form=========-->
+            //             <div class="col-lg-6 pt-4 pt-lg-15 ">
+            //               <div class="section-title">
+            //                 <h2>Sign Up</h2>
+            //               </div>
+            //               <div class="skills-content">
+            //                 <form action="/Register" method="POST">
+            //                   <!-- onsubmit="onSUbmitHandler(event)" -->
+            //                   <div>
+            //                     <label for="username" style="color:#000000;">Enter Username:<br />
+            //                       <input type="text" name="userName" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
+            //                       border: 1px solid gray;" required/></label>
+            //                   </div>
+            //                   <div>
+            //                     <label for="Password" style="color: #000000;">Enter Password</label><br />
+            //                     <input type="password" name="password"style=" width: 400px; height: 40px; padding: 5px;
+            //                     border: 1px solid gray;" required/></label>
+            //                   </div>
+            //                   <br>
+            //                   <div class="div_input_submit">
+            //                     <button type="submit" class="btn_signup">Sign Up</button>
+            //                   </div>
+            //                   <div>
+            //                     <h2 id="result1"></h2>
+            //                     <h2 id="result2"></h2>
+            //                     <h2 id="result3"></h2>
+            //                     <h2 id="result4"></h2>
+            //                     <h2 id="result5"></h2>
+            //                     <h2 id="subscribe1"></h2>
+            //                     <h2 id="error"></h2>
+            //                   </div>
+            //                 </form>
+            //               </div>
+            //             </div>
+            //           </div>
+            //         </div>
+            //       </section>
+            //       <!-- ======= END: Login/Registration Form Section ======= -->
 
-                  <!-- ======= Top footer ======= -->
-                  <section id="contact-me" class="contact ">
-                    <div class="container">
-                      <div class="section-title">
-                        <h2></h2>
-                        <div class="row">
-                        </div>
-                  </section>
-                  <!-- End Contact Section -->
-                </main>
-                <!-- End #main -->
+            //       <!-- ======= Top footer ======= -->
+            //       <section id="contact-me" class="contact ">
+            //         <div class="container">
+            //           <div class="section-title">
+            //             <h2></h2>
+            //             <div class="row">
+            //             </div>
+            //       </section>
+            //       <!-- End Contact Section -->
+            //     </main>
+            //     <!-- End #main -->
 
-                <!-- ======= Bottom Footer ======= -->
-                <footer id="footer">
-                  <div class="container footer-bottom clearfix">
-                    <div class="copyright">
-                      &copy; Copyright <span>RescueMe 2023 <br>Hifdzullah Matali</span>
-                    </div>
-                  </div>
-                </footer>
-                <!-- End Footer -->
+            //     <!-- ======= Bottom Footer ======= -->
+            //     <footer id="footer">
+            //       <div class="container footer-bottom clearfix">
+            //         <div class="copyright">
+            //           &copy; Copyright <span>RescueMe 2023 <br>Hifdzullah Matali</span>
+            //         </div>
+            //       </div>
+            //     </footer>
+            //     <!-- End Footer -->
 
-                <div id="preloader"></div>
-                <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-                    class="bi bi-arrow-up-short"></i></a>
+            //     <div id="preloader"></div>
+            //     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            //         class="bi bi-arrow-up-short"></i></a>
 
-                <!-- External JS Files -->
-                <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            //     <!-- External JS Files -->
+            //     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
           
-              </body>
+            //   </body>
 
-              </html> `)
+            //   </html> `)
 
           }
           // inserting new user data
