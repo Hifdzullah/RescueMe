@@ -1,6 +1,9 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
-const sessions = require('express-session')
+// const sessions = require('express-session')
+const session = require('cookie-session')
+
+
 const http = require('http')
 var parseUrl = require('body-parser')
 const app = express()
@@ -22,7 +25,7 @@ app.use('/assets/css', express.static('css'))
 app.use(express.json());
 
 app.use(
-  sessions({
+  session({
     secret: 'thisismysecrctekey',
     saveUninitialized: true,
     cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 24 hours
