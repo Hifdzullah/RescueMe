@@ -32,15 +32,17 @@ app.use(
 
 app.use(cookieParser())
 
+
+
 var con = mysql.createConnection({
-  // host: 'us-cdbr-east-06.cleardb.net',
-  // user: 'b840d27893baf0', // my username
-  // password: '56eebefc', // my password
-  // database: 'heroku_a97edbc2b0fde45'
-  host: 'localhost',
-  user: 'root', // my username
-  password: 'root000', // my password
-  database: 'db_auth'
+  host: 'us-cdbr-east-06.cleardb.net',
+  user: 'b840d27893baf0', // my username
+  password: '56eebefc', // my password
+  database: 'heroku_a97edbc2b0fde45'
+  // host: 'localhost',
+  // user: 'root', // my username
+  // password: 'root000', // my password
+  // database: 'db_auth'
 })
 
 //Get static file
@@ -249,7 +251,7 @@ app.post('/login', encodeUrl, (req, res) => {
                               <div>
                                 <label for="Password" style="color: #000000;">Enter Password</label><br />
                                 <input type="password" name="password"style=" width: 400px; height: 40px; padding: 5px;
-                                border: 1px solid gray;"/></label>
+                                border: 1px solid gray;"  minlength="4" required/></label>
                               </div>
                               <br>
                               <div class="div_input_submit">

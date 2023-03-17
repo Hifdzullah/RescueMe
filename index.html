@@ -63,7 +63,7 @@
 
     <!-- ======= START: About ======= -->
     <section id="about-us" class="about">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
         <div class="section-title">
           <h2>About</h2>
         </div>
@@ -82,9 +82,9 @@
 
     <!-- ======= START: Login/Registration Form Section ======= -->
     <section id="login-signup-form" class="skills section-bg">
-      <div class="container" data-aos="fade-up" style="margin: auto; display: inline-flexbox;">
+      <div class="container"style="margin: auto; ">
         <div class="row">
-          <div class="col-lg-6 pt-4 pt-lg-15" data-aos="fade-right" data-aos-delay="100">
+          <div class="col-lg-6 pt-4 pt-lg-15">
             <div class="section-title">
               <h2>Login</h2>
             </div>
@@ -96,7 +96,7 @@
                 <div>
                   <label for="username" style="color:#000000;">Enter Username:<br />
                     <input type="text" name="userName" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
-                    border: 1px solid gray;"/></label>
+                    border: 1px solid gray;" autocomplete="off"/></label>
                 </div>
                 <div>
                   <label for="Password" style="color: #000000;">Enter password:<br />
@@ -107,7 +107,7 @@
                 <div class="div_input_submit">
                   <button type="submit" class="btn_login">Login</button>
                   <div>
-                    <a href="/reset">Forget Password?</a>
+                    <!-- <a href="/reset">Forget Password?</a> -->
                   </div>
                 </div>
                 <br>
@@ -131,7 +131,7 @@
            <!--TODO: Validation on server.js-->
            <!--TODO: Reset password-->
 
-          <div class="col-lg-6 pt-4 pt-lg-15 " data-aos="fade-left" data-aos-delay="100">
+          <div class="col-lg-6 pt-4 pt-lg-15 ">
             <div class="section-title">
               <h2>Sign Up</h2>
             </div>
@@ -141,13 +141,13 @@
                 <div>
                   <label for="username" style="color:#000000;">Create Username:<br />
                     <input type="text" name="userName" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
-                    border: 1px solid gray;"/></label>
+                    border: 1px solid gray;" autocomplete="off"/></label>
                 </div>
   
                 <div>
                   <label for="Password" style="color: #000000;">Create Password</label><br />
                   <input type="password" name="password"style=" width: 400px; height: 40px; padding: 5px;
-                  border: 1px solid gray;"/></label>
+                  border: 1px solid gray;"  minlength="4" required/></label>
                 </div>
                 <br>
                 <div class="div_input_submit">
@@ -172,7 +172,7 @@
 
     <!-- ======= Top footer ======= -->
     <!-- <section id="contact-me" class="contact ">
-      <div class="container" data-aos="fade-up">
+      <div class="container">
         <div class="section-title">
           <h2></h2>
           <div class="row"> -->
