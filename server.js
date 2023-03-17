@@ -3,6 +3,8 @@ const cookieParser = require('cookie-parser')
 const session = require('express-session')
 //const session = require('cookie-session')
 
+const MemoryStore = require('memorystore')(session)
+
 
 const http = require('http')
 var parseUrl = require('body-parser')
@@ -24,17 +26,32 @@ app.use('/assets/css', express.static('css'))
 //session middleware
 app.use(express.json());
 
+// app.use(
+//   session({
+//     secret: 'thisismysecrctekey',
+//     saveUninitialized: true,
+//     resave: false,
+//     proxy: true,
+//     name: 'Myapprescueme',
+//     cookie: { 
+//        httpOnly: false,
+//        secure: true,
+//        sameSite: 'none' },
+//   })
+// )
+
 app.use(
   session({
-    secret: 'thisismysecrctekey',
-    saveUninitialized: true,
-    proxy: true,
-    name: 'Myapprescueme',
-    cookie: { httpOnly: true, secure: true, maxAge: 1000 * 60 * 60 * 48, sameSite: 'none' },
-    // cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 24 hours
-    resave: false
-  })
-)
+  cookie: { maxAge: 86400000 },
+  store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+  }),
+  resave: false,
+  secret: 'keyboard cat'
+}))
+
+
+  // cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 24 hours
 
 app.use(cookieParser())
 
