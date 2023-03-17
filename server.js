@@ -174,7 +174,8 @@ app.post('/login', encodeUrl, (req, res) => {
                   <div class="container">
                     <div class="row">
                       <h1 style="text-align:center; margin:auto">RescueMe</h1>
-                      <h2 style="text-align:center; color: #fff;">RescueMe,  real-time web application for everyone and animal lovers community. We aim to give the animal to have a better life
+                      <h2 style="text-align:center; color: #fff;">RescueMe is a real-time web application for everyone and animals lovers community. 
+                      We aim to give the animal to have a better life.
                       </h2>
                     </div>
                   </div>
@@ -409,7 +410,8 @@ app.post('/register', encodeUrl, (req, res) => {
                   <div class="container">
                     <div class="row">
                       <h1 style="text-align:center; margin: auto">RescueMe</h1>
-                      <h2 style="text-align:center; color: #fff;">RescueMe,  real-time web application for everyone and animal lovers community. We aim to give the animal to have a better life
+                      <h2 style="text-align:center; color: #fff;">RescueMe is a real-time web application for everyone and animals lovers community.
+                       We aim to give the animal to have a better life.
                       </h2>
                     </div>
                   </div>
