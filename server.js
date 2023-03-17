@@ -1,7 +1,7 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
-// const sessions = require('express-session')
-const session = require('cookie-session')
+const session = require('express-session')
+//const session = require('cookie-session')
 
 
 const http = require('http')
@@ -28,7 +28,10 @@ app.use(
   session({
     secret: 'thisismysecrctekey',
     saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 24 hours
+    proxy: true,
+    name: 'Myapprescueme',
+    cookie: { httpOnly: true, secure: true, maxAge: 1000 * 60 * 60 * 48, sameSite: 'none' },
+    // cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 24 hours
     resave: false
   })
 )
