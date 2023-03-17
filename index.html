@@ -12,7 +12,8 @@
   <link href="assets/externalfile/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/externalfile/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 
   <!-- Main CSS File -->
@@ -24,12 +25,14 @@
 <body>
 
   <!-- ====== Start: Section (Banner)====== -->
-  <section id="banner" class="d-flex align-items-center" style="background-image:url(./img/banner.jpg);  background-size: 1400px 526px ; background-repeat: no-repeat; background-color: #43af11;">
+  <section id="banner" class="d-flex align-items-center"
+    style="background-image:url(./img/banner.jpg);  background-size: 1400px 526px ; background-repeat: no-repeat; background-color: #43af11;">
     <div class="container">
       <div class="row">
         <h1 style="text-align:center; margin: auto;">RescueMe</h1>
-        <h2 style="text-align:center; color: #fff;">RescueMe,  real-time web application for everyone and animal lovers community. We aim to give the animal to have a better life
-            </h2>
+        <h2 style="text-align:center; color: #fff;">RescueMe, real-time web application for everyone and animal lovers
+          community. We aim to give the animal to have a better life
+        </h2>
       </div>
     </div>
   </section>
@@ -53,7 +56,8 @@
             <li><a class="nav-link scrollto" href="suggestion.html">Suggestion</a></li>
             <li><a class="nav-link scrollto" href="#login-signup-form">Login/Register</a></li>
           </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
+          <i class="bi bi-list mobile-nav-toggle" style="font-size: 19px; text-align: center; line-height: 15px;">Sorry,
+            this webpage does not support responsive design</i>
         </nav>
         <!-- End: navbar -->
       </div>
@@ -70,8 +74,12 @@
         <div class=" row content">
           <div class="mx-md-auto">
             <p class="p-about-us" style="text-align:justify;">
-             According to BruneianNews (2022) about 50,000 stray cats and dogs recorded in Brunei Darussalam. RescueMe a rescue web application provides everyone and animal lovers to easily access, sharing information of stray and lost cats or dogs in real-time. A animal rescue web application to provide asssitance to cats and dogs
-             to have better life and place for shelter peacefully. RescueMe application provides everyone with the access to vetenarians, animal caretakers, volunters all in a single platform.
+              According to BruneianNews (2022) about 50,000 stray cats and dogs were recorded in Brunei Darussalam.
+              RescueMe a rescue web application provides everyone and animal lovers with easy access, to sharing
+              information about stray and lost cats or dogs in real-time. An animal rescue web application to provide
+              assistance to cats and dogs to have better life and place in a shelter peacefully. The RescueMe
+              application provides everyone with access to veterinarians, animal caretakers, and volunteers all in a
+              single platform.
             </p>
           </div>
         </div>
@@ -82,7 +90,7 @@
 
     <!-- ======= START: Login/Registration Form Section ======= -->
     <section id="login-signup-form" class="skills section-bg">
-      <div class="container"style="margin: auto; ">
+      <div class="container" style="margin: auto; ">
         <div class="row">
           <div class="col-lg-6 pt-4 pt-lg-15">
             <div class="section-title">
@@ -96,12 +104,12 @@
                 <div>
                   <label for="username" style="color:#000000;">Enter Username:<br />
                     <input type="text" name="userName" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
-                    border: 1px solid gray;" autocomplete="off"/></label>
+                    border: 1px solid gray;" autocomplete="off" required /></label>
                 </div>
                 <div>
                   <label for="Password" style="color: #000000;">Enter password:<br />
-                  <input type="password" name="password" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
-                  border: 1px solid gray;"/></label>
+                    <input type="password" name="password" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
+                  border: 1px solid gray;" required /></label>
                 </div>
                 <br>
                 <div class="div_input_submit">
@@ -127,9 +135,9 @@
           </div>
 
 
-           <!--========END: Login Form=========-->
-           <!--TODO: Validation on server.js-->
-           <!--TODO: Reset password-->
+          <!--========END: Login Form=========-->
+          <!--TODO: Validation on server.js-->
+          <!--TODO: Reset password and logout account-->
 
           <div class="col-lg-6 pt-4 pt-lg-15 ">
             <div class="section-title">
@@ -141,13 +149,13 @@
                 <div>
                   <label for="username" style="color:#000000;">Create Username:<br />
                     <input type="text" name="userName" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
-                    border: 1px solid gray;" autocomplete="off"/></label>
+                    border: 1px solid gray;" autocomplete="off" required /></label>
                 </div>
-  
+
                 <div>
                   <label for="Password" style="color: #000000;">Create Password</label><br />
-                  <input type="password" name="password"style=" width: 400px; height: 40px; padding: 5px;
-                  border: 1px solid gray;"  minlength="4" required/></label>
+                  <input type="password" name="password" style=" width: 400px; height: 40px; padding: 5px;
+                  border: 1px solid gray;" minlength="4" required /></label>
                 </div>
                 <br>
                 <div class="div_input_submit">
@@ -176,7 +184,7 @@
         <div class="section-title">
           <h2></h2>
           <div class="row"> -->
-            <!-- <div class="col-lg-5" style="margin:auto" style="border:1px solid black">
+    <!-- <div class="col-lg-5" style="margin:auto" style="border:1px solid black">
               <div class="info">
                 <div class="phone">
                   <h4>Contact Number</h4>
@@ -188,7 +196,7 @@
                 </div>
               </div>
             </div> -->
-          <!-- </div>
+    <!-- </div>
     </section> -->
     <!-- End Contact Section -->
   </main>

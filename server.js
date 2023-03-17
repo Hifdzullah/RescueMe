@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000
 const http = require('http')
 var parseUrl = require('body-parser')
 const app = express()
-let alert = require('alert'); 
+let alert = require('alert');
 
 //Validaton middleware
 const validator = require("express-validator");
@@ -48,19 +48,20 @@ app.use(express.json());
 
 app.use(
   session({
-  cookie: { maxAge: 86400000,
-    sameSite: 'none' 
-   },
-  store: new MemoryStore({
-    checkPeriod: 86400000 // prune expired entries every 24h
-  }),
-  resave: false,
-  secret: 'keyboard cat',
-  saveUninitialized: true
-}))
+    cookie: {
+      maxAge: 86400000,
+      sameSite: 'none'
+    },
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    }),
+    resave: false,
+    secret: 'keyboard cat',
+    saveUninitialized: true
+  }))
 
 
-  // cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 24 hours
+// cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 24 hours
 
 app.use(cookieParser())
 
@@ -129,9 +130,9 @@ app.post('/login', encodeUrl, (req, res) => {
           alert("Login Account Unsuccessful")
         }
         //alert if condition
-          
-       
-        function userPage () {
+
+
+        function userPage() {
           //Create a session for the dashboard (user page) page
           // save the user data to this session
           req.session.user = {
@@ -198,7 +199,7 @@ app.post('/login', encodeUrl, (req, res) => {
                           <li><a class="nav-link scrollto" href="suggestion.html">Suggestion</a></li>
                           <li><a class="nav-link scrollto" href="#login-signup-form">Login/Register</a></li>
                         </ul>
-                        <i class="bi bi-list mobile-nav-toggle"></i>
+                        <i class="bi bi-list mobile-nav-toggle" style="font-size: 19px; text-align: center; line-height: 15px;">Sorry, this webpage does not support responsive design</i>
                       </nav>
                       <!-- End: navbar -->
                     </div>
@@ -215,8 +216,8 @@ app.post('/login', encodeUrl, (req, res) => {
                       <div class=" row content">
                         <div class="mx-md-auto">
                         <p class="p-about-us" style="text-align:justify;">
-                        According to BruneianNews (2022) about 50,000 stray cats and dogs recorded in Brunei Darussalam. RescueMe a rescue web application provides everyone and animal lovers to easily access, sharing information of stray and lost cats or dogs in real-time. A animal rescue web application to provide asssitance to cats and dogs
-                        to have better life and place for shelter peacefully. RescueMe application provides everyone with the access to vetenarians, animal caretakers, volunters all in a single platform.
+                        According to BruneianNews (2022) about 50,000 stray cats and dogs were recorded in Brunei Darussalam. RescueMe a rescue web application provides everyone and animal lovers with easy access, to sharing information about stray and lost cats or dogs in real-time. An animal rescue web application to provide 
+                        assistance to cats and dogs to have better life and place in a shelter peacefully. The RescueMe application provides everyone with access to veterinarians, animal caretakers, and volunteers all in a single platform.
                        </p>
                         </div>
                       </div>
@@ -370,10 +371,10 @@ app.post('/register', encodeUrl, (req, res) => {
         }
         //Check if 
         if (Object.keys(result).length > 0) {
-          res.sendFile(__dirname + '/error_log.html')
+          res.sendFile(__dirname + '/error_reg.html')
         } else {
           //creating user page in userPage function
-          function userPage () {
+          function userPage() {
             //Create sesison in (user page) function page and save the user data to this session:
             req.session.user = {
               username: userName,
@@ -433,7 +434,7 @@ app.post('/register', encodeUrl, (req, res) => {
                           <li><a class="nav-link scrollto" href="suggestion.html">Suggestion</a></li>
                           <li><a class="nav-link scrollto" href="#login-signup-form">Login/Register</a></li>
                         </ul>
-                        <i class="bi bi-list mobile-nav-toggle"></i>
+                        <i class="bi bi-list mobile-nav-toggle" style="font-size: 19px; text-align: center; line-height: 15px;">Sorry, this webpage does not support responsive design</i>
                       </nav>
                       <!-- End: navbar -->
                     </div>
@@ -450,8 +451,9 @@ app.post('/register', encodeUrl, (req, res) => {
                       <div class=" row content">
                         <div class="mx-md-auto">
                         <p class="p-about-us" style="text-align:justify;">
-                        According to BruneianNews (2022) about 50,000 stray cats and dogs recorded in Brunei Darussalam. RescueMe a rescue web application provides everyone and animal lovers to easily access, sharing information of stray and lost cats or dogs in real-time. A animal rescue web application to provide asssitance to cats and dogs
-                        to have better life and place for shelter peacefully. RescueMe application provides everyone with the access to vetenarians, animal caretakers, volunters all in a single platform.
+                        According to BruneianNews (2022) about 50,000 stray cats and dogs were recorded in Brunei Darussalam.
+                         RescueMe a rescue web application provides everyone and animal lovers with easy access, to sharing information about stray and lost cats or dogs in real-time. An animal rescue web application to provide assistance to cats and dogs to have better life and place in a shelter peacefully. The RescueMe application provides everyone with access to 
+                        veterinarians, animal caretakers, and volunteers all in a single platform.
                        </p>
                         </div>
                       </div>
@@ -512,12 +514,12 @@ app.post('/register', encodeUrl, (req, res) => {
                               <div>
                                 <label for="username" style="color:#000000;">Enter Username:<br />
                                   <input type="text" name="userName" style=" width: 400px; height: 40px; padding: 5px; margin-top: 5px;
-                                  border: 1px solid gray;"/></label>
+                                  border: 1px solid gray;" required/></label>
                               </div>
                               <div>
                                 <label for="Password" style="color: #000000;">Enter Password</label><br />
                                 <input type="password" name="password"style=" width: 400px; height: 40px; padding: 5px;
-                                border: 1px solid gray;"/></label>
+                                border: 1px solid gray;" required/></label>
                               </div>
                               <br>
                               <div class="div_input_submit">
@@ -572,7 +574,7 @@ app.post('/register', encodeUrl, (req, res) => {
               </body>
 
               </html> `)
-          
+
           }
           // inserting new user data
           var sql = `INSERT INTO tbl_auth_reg (username, password) VALUES ('${userName}', '${password}')`
